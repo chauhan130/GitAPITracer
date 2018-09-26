@@ -1,0 +1,9 @@
+use_frameworks!
+target 'GitAPITracer' do
+    pod 'Alamofire', '~> 4.7'
+end
+
+target 'GitAPITracerDemo' do
+    pod 'Alamofire', '~> 4.7'
+end
+

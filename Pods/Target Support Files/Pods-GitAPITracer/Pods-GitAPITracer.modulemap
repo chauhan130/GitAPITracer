@@ -1,0 +1,6 @@
+framework module Pods_GitAPITracer {
+  umbrella header "Pods-GitAPITracer-umbrella.h"
+
+  export *
+  module * { export * }
+}
