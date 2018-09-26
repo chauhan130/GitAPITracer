@@ -38,16 +38,6 @@
                ReferencedContainer = "container:GitAPITracerDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A79B45BF215B87FC000B7FFC"
-               BuildableName = "GitAPITracerDemoUITests.xctest"
-               BlueprintName = "GitAPITracerDemoUITests"
-               ReferencedContainer = "container:GitAPITracerDemo.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
