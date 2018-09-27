@@ -12,8 +12,6 @@
 		A713B5E520E624DF0091B423 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A713B5E420E624DF0091B423 /* Assets.xcassets */; };
 		A713B5F120E624FC0091B423 /* GitDataFetcherHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A713B5F020E624FC0091B423 /* GitDataFetcherHome.swift */; };
 		A713B5F420E625180091B423 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A713B5F220E625180091B423 /* Storyboard.storyboard */; };
-		A713B60320E6256D0091B423 /* GitAPITracer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A713B5FA20E6256D0091B423 /* GitAPITracer.framework */; };
-		A713B60A20E6256D0091B423 /* GitAPITracerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A713B60920E6256D0091B423 /* GitAPITracerTests.swift */; };
 		A713B60C20E6256D0091B423 /* GitAPITracer.h in Headers */ = {isa = PBXBuildFile; fileRef = A713B5FC20E6256D0091B423 /* GitAPITracer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A713B60F20E6256D0091B423 /* GitAPITracer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A713B5FA20E6256D0091B423 /* GitAPITracer.framework */; };
 		A713B61020E6256D0091B423 /* GitAPITracer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A713B5FA20E6256D0091B423 /* GitAPITracer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -21,25 +19,13 @@
 		A713B61F20E62C0D0091B423 /* CommitContributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A713B61E20E62C0D0091B423 /* CommitContributor.swift */; };
 		A713B62220E6301E0091B423 /* AuthorAndCommittor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A713B62120E6301E0091B423 /* AuthorAndCommittor.swift */; };
 		A72098BB20E650FF0035194A /* GitUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72098BA20E650FF0035194A /* GitUser.swift */; };
-		A79B45C3215B87FC000B7FFC /* GitAPITracerDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79B45C2215B87FC000B7FFC /* GitAPITracerDemoUITests.swift */; };
+		A7B8425A215D4B2600F4CD2B /* GitAPITracerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B84259215D4B2600F4CD2B /* GitAPITracerTests.swift */; };
+		A7B8425C215D4B2600F4CD2B /* GitAPITracer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A713B5FA20E6256D0091B423 /* GitAPITracer.framework */; };
 		ABB41FF1E6AB1D7F157364F3 /* Pods_GitAPITracer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398889D9F8240F85E310BB9D /* Pods_GitAPITracer.framework */; };
+		BC4E1BA3DDCB63770B977677 /* Pods_GitAPITracerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3B9BA4449801F6DB6AF79D /* Pods_GitAPITracerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A713B60420E6256D0091B423 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A713B5D520E624DE0091B423 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A713B5F920E6256D0091B423;
-			remoteInfo = GitAPITracer;
-		};
-		A713B60620E6256D0091B423 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A713B5D520E624DE0091B423 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A713B5DC20E624DE0091B423;
-			remoteInfo = GitAPITracerDemo;
-		};
 		A713B60D20E6256D0091B423 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A713B5D520E624DE0091B423 /* Project object */;
@@ -47,12 +33,12 @@
 			remoteGlobalIDString = A713B5F920E6256D0091B423;
 			remoteInfo = GitAPITracer;
 		};
-		A79B45C5215B87FC000B7FFC /* PBXContainerItemProxy */ = {
+		A7B8425D215D4B2600F4CD2B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A713B5D520E624DE0091B423 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A713B5DC20E624DE0091B423;
-			remoteInfo = GitAPITracerDemo;
+			remoteGlobalIDString = A713B5F920E6256D0091B423;
+			remoteInfo = GitAPITracer;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -71,10 +57,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B4C42DBB222FADDAC3393AA /* Pods-GitAPITracerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitAPITracerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitAPITracerTests/Pods-GitAPITracerTests.release.xcconfig"; sourceTree = "<group>"; };
+		1E576A016EE58729E344466B /* Pods-GitAPITracerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitAPITracerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitAPITracerTests/Pods-GitAPITracerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2E6364667070FEDA5CDD6CF7 /* Pods-GitAPITracerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitAPITracerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitAPITracerDemo/Pods-GitAPITracerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		398889D9F8240F85E310BB9D /* Pods_GitAPITracer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitAPITracer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E7EB7AA8929AAA8D4718AD /* Pods-GitAPITracer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitAPITracer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitAPITracer/Pods-GitAPITracer.debug.xcconfig"; sourceTree = "<group>"; };
+		62699E4A56222B3A69AC5677 /* Pods_GitAPITracer_GitAPITracerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitAPITracer_GitAPITracerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		798454ABC7A2A3BDB01A2A13 /* Pods-GitAPITracerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitAPITracerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitAPITracerDemo/Pods-GitAPITracerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		A663174E3DF042AB7C3A94FC /* Pods-GitAPITracer-GitAPITracerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitAPITracer-GitAPITracerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitAPITracer-GitAPITracerTests/Pods-GitAPITracer-GitAPITracerTests.release.xcconfig"; sourceTree = "<group>"; };
 		A6A277BA10335003275A35FA /* Pods_GitAPITracerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitAPITracerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A713B5DD20E624DE0091B423 /* GitAPITracerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitAPITracerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A713B5E020E624DE0091B423 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,17 +76,16 @@
 		A713B5FA20E6256D0091B423 /* GitAPITracer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GitAPITracer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A713B5FC20E6256D0091B423 /* GitAPITracer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitAPITracer.h; sourceTree = "<group>"; };
 		A713B5FD20E6256D0091B423 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A713B60220E6256D0091B423 /* GitAPITracerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitAPITracerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A713B60920E6256D0091B423 /* GitAPITracerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitAPITracerTests.swift; sourceTree = "<group>"; };
-		A713B60B20E6256D0091B423 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A713B61820E626090091B423 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		A713B61E20E62C0D0091B423 /* CommitContributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitContributor.swift; sourceTree = "<group>"; };
 		A713B62120E6301E0091B423 /* AuthorAndCommittor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorAndCommittor.swift; sourceTree = "<group>"; };
 		A72098BA20E650FF0035194A /* GitUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUser.swift; sourceTree = "<group>"; };
-		A79B45C0215B87FC000B7FFC /* GitAPITracerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitAPITracerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A79B45C2215B87FC000B7FFC /* GitAPITracerDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitAPITracerDemoUITests.swift; sourceTree = "<group>"; };
-		A79B45C4215B87FC000B7FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7B84257215D4B2600F4CD2B /* GitAPITracerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitAPITracerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7B84259215D4B2600F4CD2B /* GitAPITracerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitAPITracerTests.swift; sourceTree = "<group>"; };
+		A7B8425B215D4B2600F4CD2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB3B9BA4449801F6DB6AF79D /* Pods_GitAPITracerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitAPITracerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB7A4DA097949B62F5C1917 /* Pods-GitAPITracer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitAPITracer.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitAPITracer/Pods-GitAPITracer.release.xcconfig"; sourceTree = "<group>"; };
+		E66A5E925C6214A6F98899A0 /* Pods-GitAPITracer-GitAPITracerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitAPITracer-GitAPITracerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitAPITracer-GitAPITracerTests/Pods-GitAPITracer-GitAPITracerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,18 +106,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A713B5FF20E6256D0091B423 /* Frameworks */ = {
+		A7B84254215D4B2600F4CD2B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A713B60320E6256D0091B423 /* GitAPITracer.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A79B45BD215B87FC000B7FFC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				A7B8425C215D4B2600F4CD2B /* GitAPITracer.framework in Frameworks */,
+				BC4E1BA3DDCB63770B977677 /* Pods_GitAPITracerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +125,10 @@
 				DAB7A4DA097949B62F5C1917 /* Pods-GitAPITracer.release.xcconfig */,
 				798454ABC7A2A3BDB01A2A13 /* Pods-GitAPITracerDemo.debug.xcconfig */,
 				2E6364667070FEDA5CDD6CF7 /* Pods-GitAPITracerDemo.release.xcconfig */,
+				E66A5E925C6214A6F98899A0 /* Pods-GitAPITracer-GitAPITracerTests.debug.xcconfig */,
+				A663174E3DF042AB7C3A94FC /* Pods-GitAPITracer-GitAPITracerTests.release.xcconfig */,
+				1E576A016EE58729E344466B /* Pods-GitAPITracerTests.debug.xcconfig */,
+				1B4C42DBB222FADDAC3393AA /* Pods-GitAPITracerTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -162,8 +149,7 @@
 			children = (
 				A713B5DD20E624DE0091B423 /* GitAPITracerDemo.app */,
 				A713B5FA20E6256D0091B423 /* GitAPITracer.framework */,
-				A713B60220E6256D0091B423 /* GitAPITracerTests.xctest */,
-				A79B45C0215B87FC000B7FFC /* GitAPITracerDemoUITests.xctest */,
+				A7B84257215D4B2600F4CD2B /* GitAPITracerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,7 +163,6 @@
 				A713B5E420E624DF0091B423 /* Assets.xcassets */,
 				A713B5E920E624DF0091B423 /* Info.plist */,
 				A713B5EA20E624DF0091B423 /* GitAPITracerDemo.entitlements */,
-				A79B45C1215B87FC000B7FFC /* GitAPITracerDemoUITests */,
 			);
 			path = GitAPITracerDemo;
 			sourceTree = "<group>";
@@ -191,15 +176,6 @@
 				A713B5FD20E6256D0091B423 /* Info.plist */,
 			);
 			path = GitAPITracer;
-			sourceTree = "<group>";
-		};
-		A713B60820E6256D0091B423 /* GitAPITracerTests */ = {
-			isa = PBXGroup;
-			children = (
-				A713B60920E6256D0091B423 /* GitAPITracerTests.swift */,
-				A713B60B20E6256D0091B423 /* Info.plist */,
-			);
-			path = GitAPITracerTests;
 			sourceTree = "<group>";
 		};
 		A713B62020E62C9E0091B423 /* Models */ = {
@@ -216,18 +192,18 @@
 			isa = PBXGroup;
 			children = (
 				A713B5FB20E6256D0091B423 /* GitAPITracer */,
-				A713B60820E6256D0091B423 /* GitAPITracerTests */,
+				A7B84258215D4B2600F4CD2B /* GitAPITracerTests */,
 			);
 			path = GitAPI;
 			sourceTree = "<group>";
 		};
-		A79B45C1215B87FC000B7FFC /* GitAPITracerDemoUITests */ = {
+		A7B84258215D4B2600F4CD2B /* GitAPITracerTests */ = {
 			isa = PBXGroup;
 			children = (
-				A79B45C2215B87FC000B7FFC /* GitAPITracerDemoUITests.swift */,
-				A79B45C4215B87FC000B7FFC /* Info.plist */,
+				A7B84259215D4B2600F4CD2B /* GitAPITracerTests.swift */,
+				A7B8425B215D4B2600F4CD2B /* Info.plist */,
 			);
-			path = GitAPITracerDemoUITests;
+			path = GitAPITracerTests;
 			sourceTree = "<group>";
 		};
 		E07184BD1EC0D6DAD4092615 /* Frameworks */ = {
@@ -235,6 +211,8 @@
 			children = (
 				398889D9F8240F85E310BB9D /* Pods_GitAPITracer.framework */,
 				A6A277BA10335003275A35FA /* Pods_GitAPITracerDemo.framework */,
+				CB3B9BA4449801F6DB6AF79D /* Pods_GitAPITracerTests.framework */,
+				62699E4A56222B3A69AC5677 /* Pods_GitAPITracer_GitAPITracerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -293,42 +271,25 @@
 			productReference = A713B5FA20E6256D0091B423 /* GitAPITracer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A713B60120E6256D0091B423 /* GitAPITracerTests */ = {
+		A7B84256215D4B2600F4CD2B /* GitAPITracerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A713B61520E6256D0091B423 /* Build configuration list for PBXNativeTarget "GitAPITracerTests" */;
+			buildConfigurationList = A7B8425F215D4B2600F4CD2B /* Build configuration list for PBXNativeTarget "GitAPITracerTests" */;
 			buildPhases = (
-				A713B5FE20E6256D0091B423 /* Sources */,
-				A713B5FF20E6256D0091B423 /* Frameworks */,
-				A713B60020E6256D0091B423 /* Resources */,
+				161133209E3ADCA79725062D /* [CP] Check Pods Manifest.lock */,
+				A7B84253215D4B2600F4CD2B /* Sources */,
+				A7B84254215D4B2600F4CD2B /* Frameworks */,
+				A7B84255215D4B2600F4CD2B /* Resources */,
+				CF2651E5B162F03CEB47337A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A713B60520E6256D0091B423 /* PBXTargetDependency */,
-				A713B60720E6256D0091B423 /* PBXTargetDependency */,
+				A7B8425E215D4B2600F4CD2B /* PBXTargetDependency */,
 			);
 			name = GitAPITracerTests;
 			productName = GitAPITracerTests;
-			productReference = A713B60220E6256D0091B423 /* GitAPITracerTests.xctest */;
+			productReference = A7B84257215D4B2600F4CD2B /* GitAPITracerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		A79B45BF215B87FC000B7FFC /* GitAPITracerDemoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A79B45C7215B87FC000B7FFC /* Build configuration list for PBXNativeTarget "GitAPITracerDemoUITests" */;
-			buildPhases = (
-				A79B45BC215B87FC000B7FFC /* Sources */,
-				A79B45BD215B87FC000B7FFC /* Frameworks */,
-				A79B45BE215B87FC000B7FFC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A79B45C6215B87FC000B7FFC /* PBXTargetDependency */,
-			);
-			name = GitAPITracerDemoUITests;
-			productName = GitAPITracerDemoUITests;
-			productReference = A79B45C0215B87FC000B7FFC /* GitAPITracerDemoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -347,13 +308,8 @@
 						CreatedOnToolsVersion = 9.4;
 						LastSwiftMigration = 0940;
 					};
-					A713B60120E6256D0091B423 = {
-						CreatedOnToolsVersion = 9.4;
-						TestTargetID = A713B5DC20E624DE0091B423;
-					};
-					A79B45BF215B87FC000B7FFC = {
+					A7B84256215D4B2600F4CD2B = {
 						CreatedOnToolsVersion = 10.0;
-						TestTargetID = A713B5DC20E624DE0091B423;
 					};
 				};
 			};
@@ -372,8 +328,7 @@
 			targets = (
 				A713B5DC20E624DE0091B423 /* GitAPITracerDemo */,
 				A713B5F920E6256D0091B423 /* GitAPITracer */,
-				A713B60120E6256D0091B423 /* GitAPITracerTests */,
-				A79B45BF215B87FC000B7FFC /* GitAPITracerDemoUITests */,
+				A7B84256215D4B2600F4CD2B /* GitAPITracerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -395,14 +350,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A713B60020E6256D0091B423 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A79B45BE215B87FC000B7FFC /* Resources */ = {
+		A7B84255215D4B2600F4CD2B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -424,6 +372,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-GitAPITracerDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		161133209E3ADCA79725062D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GitAPITracerTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -466,6 +432,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CF2651E5B162F03CEB47337A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GitAPITracerTests/Pods-GitAPITracerTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitAPITracerTests/Pods-GitAPITracerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -489,44 +473,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A713B5FE20E6256D0091B423 /* Sources */ = {
+		A7B84253215D4B2600F4CD2B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A713B60A20E6256D0091B423 /* GitAPITracerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A79B45BC215B87FC000B7FFC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A79B45C3215B87FC000B7FFC /* GitAPITracerDemoUITests.swift in Sources */,
+				A7B8425A215D4B2600F4CD2B /* GitAPITracerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A713B60520E6256D0091B423 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A713B5F920E6256D0091B423 /* GitAPITracer */;
-			targetProxy = A713B60420E6256D0091B423 /* PBXContainerItemProxy */;
-		};
-		A713B60720E6256D0091B423 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A713B5DC20E624DE0091B423 /* GitAPITracerDemo */;
-			targetProxy = A713B60620E6256D0091B423 /* PBXContainerItemProxy */;
-		};
 		A713B60E20E6256D0091B423 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A713B5F920E6256D0091B423 /* GitAPITracer */;
 			targetProxy = A713B60D20E6256D0091B423 /* PBXContainerItemProxy */;
 		};
-		A79B45C6215B87FC000B7FFC /* PBXTargetDependency */ = {
+		A7B8425E215D4B2600F4CD2B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A713B5DC20E624DE0091B423 /* GitAPITracerDemo */;
-			targetProxy = A79B45C5215B87FC000B7FFC /* PBXContainerItemProxy */;
+			target = A713B5F920E6256D0091B423 /* GitAPITracer */;
+			targetProxy = A7B8425D215D4B2600F4CD2B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -667,14 +633,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = W4YB8M4L9P;
 				INFOPLIST_FILE = GitAPITracerDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chauhan130.GitAPITracerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -690,14 +653,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = W4YB8M4L9P;
 				INFOPLIST_FILE = GitAPITracerDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chauhan130.GitAPITracerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -707,28 +667,24 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = W4YB8M4L9P;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = GitAPI/GitAPITracer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chauhan130.GitAPITracer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -740,110 +696,62 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = W4YB8M4L9P;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = GitAPI/GitAPITracer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chauhan130.GitAPITracer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		A713B61620E6256D0091B423 /* Debug */ = {
+		A7B84260215D4B2600F4CD2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E576A016EE58729E344466B /* Pods-GitAPITracerTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W4YB8M4L9P;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GitAPI/GitAPITracerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = chauhan130.GitAPITracerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitAPITracerDemo.app/Contents/MacOS/GitAPITracerDemo";
-			};
-			name = Debug;
-		};
-		A713B61720E6256D0091B423 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W4YB8M4L9P;
-				INFOPLIST_FILE = GitAPI/GitAPITracerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = chauhan130.GitAPITracerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitAPITracerDemo.app/Contents/MacOS/GitAPITracerDemo";
-			};
-			name = Release;
-		};
-		A79B45C8215B87FC000B7FFC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W4YB8M4L9P;
-				INFOPLIST_FILE = GitAPITracerDemo/GitAPITracerDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chauhan130.GitAPITracerDemoUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chauhan130.GitAPITracerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TEST_TARGET_NAME = GitAPITracerDemo;
 			};
 			name = Debug;
 		};
-		A79B45C9215B87FC000B7FFC /* Release */ = {
+		A7B84261215D4B2600F4CD2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B4C42DBB222FADDAC3393AA /* Pods-GitAPITracerTests.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W4YB8M4L9P;
-				INFOPLIST_FILE = GitAPITracerDemo/GitAPITracerDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = GitAPI/GitAPITracerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chauhan130.GitAPITracerDemoUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chauhan130.GitAPITracerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TEST_TARGET_NAME = GitAPITracerDemo;
 			};
 			name = Release;
 		};
@@ -877,20 +785,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A713B61520E6256D0091B423 /* Build configuration list for PBXNativeTarget "GitAPITracerTests" */ = {
+		A7B8425F215D4B2600F4CD2B /* Build configuration list for PBXNativeTarget "GitAPITracerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A713B61620E6256D0091B423 /* Debug */,
-				A713B61720E6256D0091B423 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A79B45C7215B87FC000B7FFC /* Build configuration list for PBXNativeTarget "GitAPITracerDemoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A79B45C8215B87FC000B7FFC /* Debug */,
-				A79B45C9215B87FC000B7FFC /* Release */,
+				A7B84260215D4B2600F4CD2B /* Debug */,
+				A7B84261215D4B2600F4CD2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
