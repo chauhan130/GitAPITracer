@@ -12,7 +12,9 @@ import Alamofire
 public class APIHelper: NSObject {
     private enum Constants {
         static let commitPathComponent = "commits"
-        static let userDetailApiURL = "https://api.github.com/users/"
+        static let gitBaseUrl = "https://api.github.com"
+        static let userDetailApiURL = "\(gitBaseUrl)/users"
+        static let gitRepoQueryURL = "\(gitBaseUrl)/repos"
     }
 
     public typealias CommitApiCompletion = (CommitApiResult) -> (Void)
@@ -41,20 +43,29 @@ public class APIHelper: NSObject {
     private var usersArrayApiCompletion: UsersArrayApiCompletion?
     private var fetchedUsers = [GitUser]()
     private var index: Int = 0
+    //  https://api.github.com/repos/Alamofire/Alamofire/commits?page=0&per_page=100&name=master
+    public func getCommits(repositoryName: String, branchName: String? = nil, pageIndex: Int, numberOfRecordsPerPage: Int, completion: CommitApiCompletion? = nil) {
+        let repositoryUrl = "\(Constants.gitRepoQueryURL)/\(repositoryName)"
+        let commitUrl = repositoryUrl.appending("/\(Constants.commitPathComponent)")
 
-    //  https://api.github.com/repos/kubernetes/kubernetes/commits?page=1&per_page=30&name=master
-    public func getCommits(repositoryURL: URL, branchName: String = "master", pageIndex: Int, numberOfRecordsPerPage: Int, completion: CommitApiCompletion? = nil) {
-        let commitUrl = repositoryURL.appendingPathComponent(Constants.commitPathComponent)
-
-        let parameters = ["page" : pageIndex, "per_page" : numberOfRecordsPerPage]
+        var parameters: [String : Any] = ["page": pageIndex, "per_page": numberOfRecordsPerPage]
+        if let branchName = branchName {
+            parameters["name"] = branchName
+        }
 
         request(commitUrl, method: HTTPMethod.get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
-            if let jsonArray = response.result.value as? [[String: AnyObject]] {
-                let authorAndCommitterArray = jsonArray.compactMap({ return AuthorAndCommittor(json: $0 as [String: AnyObject]) })
-                let uniqueAuthorAndCommitters: Set<AuthorAndCommittor> = Set(authorAndCommitterArray)
-                completion?(.success(Array(uniqueAuthorAndCommitters)))
-            } else {
-                completion?(.failure(Error.cannotParseJson))
+            switch response.result {
+            case .success(let value):
+                if let jsonArray = value as? [[String: AnyObject]] {
+                    let authorAndCommitterArray = jsonArray.compactMap({ return AuthorAndCommittor(json: $0 as [String: AnyObject]) })
+                    let uniqueAuthorAndCommitters: Set<AuthorAndCommittor> = Set(authorAndCommitterArray)
+                    completion?(.success(Array(uniqueAuthorAndCommitters)))
+                } else {
+                    completion?(.failure(Error.cannotParseJson))
+                }
+                break
+            case .failure(let error):
+                completion?(.failure(error))
             }
         }
     }

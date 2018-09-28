@@ -11,7 +11,7 @@
 		A713B5E120E624DE0091B423 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A713B5E020E624DE0091B423 /* AppDelegate.swift */; };
 		A713B5E520E624DF0091B423 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A713B5E420E624DF0091B423 /* Assets.xcassets */; };
 		A713B5F120E624FC0091B423 /* GitDataFetcherHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A713B5F020E624FC0091B423 /* GitDataFetcherHome.swift */; };
-		A713B5F420E625180091B423 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A713B5F220E625180091B423 /* Storyboard.storyboard */; };
+		A713B5F420E625180091B423 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A713B5F220E625180091B423 /* Main.storyboard */; };
 		A713B60C20E6256D0091B423 /* GitAPITracer.h in Headers */ = {isa = PBXBuildFile; fileRef = A713B5FC20E6256D0091B423 /* GitAPITracer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A713B60F20E6256D0091B423 /* GitAPITracer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A713B5FA20E6256D0091B423 /* GitAPITracer.framework */; };
 		A713B61020E6256D0091B423 /* GitAPITracer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A713B5FA20E6256D0091B423 /* GitAPITracer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -72,7 +72,7 @@
 		A713B5E920E624DF0091B423 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A713B5EA20E624DF0091B423 /* GitAPITracerDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitAPITracerDemo.entitlements; sourceTree = "<group>"; };
 		A713B5F020E624FC0091B423 /* GitDataFetcherHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitDataFetcherHome.swift; sourceTree = "<group>"; };
-		A713B5F320E625180091B423 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
+		A713B5F320E625180091B423 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A713B5FA20E6256D0091B423 /* GitAPITracer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GitAPITracer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A713B5FC20E6256D0091B423 /* GitAPITracer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitAPITracer.h; sourceTree = "<group>"; };
 		A713B5FD20E6256D0091B423 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 			children = (
 				A713B5E020E624DE0091B423 /* AppDelegate.swift */,
 				A713B5F020E624FC0091B423 /* GitDataFetcherHome.swift */,
-				A713B5F220E625180091B423 /* Storyboard.storyboard */,
+				A713B5F220E625180091B423 /* Main.storyboard */,
 				A713B5E420E624DF0091B423 /* Assets.xcassets */,
 				A713B5E920E624DF0091B423 /* Info.plist */,
 				A713B5EA20E624DF0091B423 /* GitAPITracerDemo.entitlements */,
@@ -303,6 +303,11 @@
 				TargetAttributes = {
 					A713B5DC20E624DE0091B423 = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					A713B5F920E6256D0091B423 = {
 						CreatedOnToolsVersion = 9.4;
@@ -339,7 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A713B5E520E624DF0091B423 /* Assets.xcassets in Resources */,
-				A713B5F420E625180091B423 /* Storyboard.storyboard in Resources */,
+				A713B5F420E625180091B423 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,12 +502,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A713B5F220E625180091B423 /* Storyboard.storyboard */ = {
+		A713B5F220E625180091B423 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A713B5F320E625180091B423 /* Base */,
 			);
-			name = Storyboard.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -633,7 +638,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = W4YB8M4L9P;
 				INFOPLIST_FILE = GitAPITracerDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = chauhan130.GitAPITracerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -653,7 +661,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = W4YB8M4L9P;
 				INFOPLIST_FILE = GitAPITracerDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = chauhan130.GitAPITracerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -678,7 +689,11 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = GitAPI/GitAPITracer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = chauhan130.GitAPITracer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -707,7 +722,11 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = GitAPI/GitAPITracer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = chauhan130.GitAPITracer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -727,7 +746,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GitAPI/GitAPITracerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chauhan130.GitAPITracerTests;
@@ -746,7 +769,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GitAPI/GitAPITracerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chauhan130.GitAPITracerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
