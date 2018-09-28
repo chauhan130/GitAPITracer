@@ -1,5 +1,8 @@
 use_frameworks!
 
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
 target 'GitAPITracer' do
     pod 'Alamofire', '~> 4.7'
 end

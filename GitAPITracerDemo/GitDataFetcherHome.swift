@@ -25,22 +25,21 @@ class GitDataFetcherHome: NSViewController {
     // MARK: -Action Methods
 
     @IBAction func fetchCommitClicked(button: Any) {
-        if let url = URL(string: repoURL.stringValue) {
-            actLoader.startAnimation(nil)
-            APIHelper.sharedInstance.getCommits(repositoryURL: url, pageIndex: pageIndex.integerValue, numberOfRecordsPerPage: commitsPerPage.integerValue) { (result) -> (Void) in
-                self.actLoader.stopAnimation(nil)
-                switch result {
-                case .success(let authorAndCommitterArray):
-                    self.authorAndCommitterArray = authorAndCommitterArray
-                    let csvString = authorAndCommitterArray.map({ $0.csvLineString }).joined(separator: "")
-                    self.resultText.string = csvString
-                    print(csvString)
-                    break
-                case .failure(let error):
-                    let stringToPrint = "Could not fetch commits: \(error)"
-                    self.resultText.string = stringToPrint
-                    print(stringToPrint)
-                }
+        actLoader.startAnimation(nil)
+        APIHelper.sharedInstance.getCommits(repositoryName: repoURL.stringValue, pageIndex: pageIndex.integerValue,
+                                            numberOfRecordsPerPage: commitsPerPage.integerValue) { (result) -> (Void) in
+            self.actLoader.stopAnimation(nil)
+            switch result {
+            case .success(let authorAndCommitterArray):
+                self.authorAndCommitterArray = authorAndCommitterArray
+                let csvString = authorAndCommitterArray.map({ $0.csvLineString }).joined(separator: "")
+                self.resultText.string = csvString
+                print(csvString)
+                break
+            case .failure(let error):
+                let stringToPrint = "Could not fetch commits: \(error)"
+                self.resultText.string = stringToPrint
+                print(stringToPrint)
             }
         }
     }
