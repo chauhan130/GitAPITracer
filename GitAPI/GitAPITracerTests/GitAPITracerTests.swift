@@ -21,16 +21,24 @@ class GitAPITracerTests: XCTestCase {
         super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testUserDetails() {
         APIHelper.sharedInstance.getUserDetails(userLoginName: "chauhan130") { (result) -> (Void) in
             switch result {
             case .success(let user):
-                print("User found: \(user)")
                 XCTAssertTrue(user.location != "Ahmedabad")
-            case .failure(let error):
-                print("Error: \(error)")
+            case .failure:
+                XCTFail()
+            }
+        }
+    }
+
+    func testContributors() {
+        let resultSetSize = 10
+        APIHelper.sharedInstance.getContributors(from: "Alamofire/Alamofire", pageIndex: 0, numberOfRecordsPerPage: resultSetSize) { (result) -> (Void) in
+            switch result {
+            case .success(let users):
+                XCTAssertFalse(users.count == resultSetSize)
+            case .failure:
                 XCTFail()
             }
         }

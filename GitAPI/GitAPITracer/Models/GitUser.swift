@@ -8,6 +8,9 @@
 
 import Foundation
 
+//TODO: Use Codable protocol instead.
+
+/// Class responsible to represent Git User.
 public class GitUser: Equatable {
     public var gitId: Int = 0
     public var login: String = ""
