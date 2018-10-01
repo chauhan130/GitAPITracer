@@ -170,8 +170,8 @@
 		A713B5FB20E6256D0091B423 /* GitAPITracer */ = {
 			isa = PBXGroup;
 			children = (
-				A713B61820E626090091B423 /* APIHelper.swift */,
 				A713B62020E62C9E0091B423 /* Models */,
+				A713B61820E626090091B423 /* APIHelper.swift */,
 				A713B5FC20E6256D0091B423 /* GitAPITracer.h */,
 				A713B5FD20E6256D0091B423 /* Info.plist */,
 			);

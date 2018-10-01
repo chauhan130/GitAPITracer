@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// The data model that represents GitHubApi response consisting of Author & Committor together.
 public class AuthorAndCommittor: Equatable, Hashable {
     public var hashValue: Int {
         return author.gitId ^ committor.gitId
