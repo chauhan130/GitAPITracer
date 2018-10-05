@@ -15,6 +15,9 @@ class GitDataFetcherHome: NSViewController {
     @IBOutlet var pageIndex: NSTextField!
     @IBOutlet var resultText: NSTextView!
     @IBOutlet var actLoader: NSProgressIndicator!
+    @IBOutlet var userLoader: NSProgressIndicator!
+    @IBOutlet var userNameTextField: NSTextField!
+    @IBOutlet var userDetailTextView: NSTextView!
 
     private var authorAndCommitterArray = [AuthorAndCommittor]()
 
@@ -26,26 +29,25 @@ class GitDataFetcherHome: NSViewController {
 
     @IBAction func fetchCommitClicked(button: Any) {
         actLoader.startAnimation(nil)
-        APIHelper.sharedInstance.getCommits(repositoryName: repoURL.stringValue, pageIndex: pageIndex.integerValue,
-                                            numberOfRecordsPerPage: commitsPerPage.integerValue) { (result) -> (Void) in
-            self.actLoader.stopAnimation(nil)
-            switch result {
-            case .success(let authorAndCommitterArray):
-                self.authorAndCommitterArray = authorAndCommitterArray
-                let csvString = authorAndCommitterArray.map({ $0.csvLineString }).joined(separator: "")
-                self.resultText.string = csvString
-                print(csvString)
-                break
-            case .failure(let error):
-                let stringToPrint = "Could not fetch commits: \(error)"
-                self.resultText.string = stringToPrint
-                print(stringToPrint)
-            }
+
+        APIHelper.sharedInstance.getContributors(from: repoURL.stringValue, pageIndex: pageIndex.integerValue,
+                                                 numberOfRecordsPerPage: commitsPerPage.integerValue) { (result) -> (Void) in
+                                                    self.actLoader.stopAnimation(nil)
+                                                    switch result {
+                                                    case .success(let users):
+                                                        let csvString = users.map({ $0.csvLineString }).joined()
+                                                        self.resultText.string = csvString
+                                                        break
+                                                    case .failure(let error):
+                                                        let stringToPrint = "Could not fetch contributors: \(error)"
+                                                        self.resultText.string = stringToPrint
+                                                    }
         }
     }
 
     @IBAction func fetchUserDetailsForCommits(button: Any) {
         actLoader.startAnimation(nil)
+
         APIHelper.sharedInstance.getUserDetailsForCommits(authors: authorAndCommitterArray) { (result) -> (Void) in
             self.actLoader.stopAnimation(nil)
             switch result {
@@ -55,6 +57,23 @@ class GitDataFetcherHome: NSViewController {
             case .failure(let error):
                 print("Error: \(error)")
                 break
+            }
+        }
+    }
+
+    @IBAction func fetchUserDetailsFromUserName(button: Any) {
+        guard userNameTextField.stringValue.count > 0 else {
+            return
+        }
+        userLoader.startAnimation(nil)
+        APIHelper.sharedInstance.getUserDetails(userLoginName: userNameTextField.stringValue) { (result) -> (Void) in
+            self.userLoader.stopAnimation(nil)
+            switch result {
+            case .success(let user):
+                self.userDetailTextView.string = user.csvLineString
+            case .failure(let error):
+                print("Error: \(error)")
+                self.userDetailTextView.string = error.localizedDescription
             }
         }
     }

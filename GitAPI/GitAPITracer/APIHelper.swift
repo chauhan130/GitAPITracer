@@ -18,7 +18,7 @@ public class APIHelper: NSObject {
         static let gitBaseUrl = "https://api.github.com"
         static let userDetailApiURL = "\(gitBaseUrl)/users"
         static let gitRepoQueryURL = "\(gitBaseUrl)/repos"
-        static let contributorsURL = "\(gitRepoQueryURL)/contributors"
+        static let contributorsURLSegment = "contributors"
     }
 
     public typealias CommitApiCompletion = (CommitApiResult) -> (Void)
@@ -113,7 +113,7 @@ public class APIHelper: NSObject {
         let userToFetch = self.usersArrayForCommitDetails[index]
         getUserDetails(userLoginName: userToFetch.author.login) { (result) -> (Void) in
             switch result {
-            case .success(let gitUser):
+            case .success(var gitUser):
                 gitUser.email = userToFetch.author.email
                 self.fetchedUsers.append(gitUser)
                 break
@@ -133,12 +133,12 @@ public class APIHelper: NSObject {
          - completion: Block that will be executed after the user details has been fetched.
      */
     public func getUserDetails(userLoginName: String, completion: @escaping UserApiCompletion) {
-        let userApiUrl = "\(Constants.userDetailApiURL)\(userLoginName)"
-        request(userApiUrl).responseJSON { (response) in
+        let userApiUrl = "\(Constants.userDetailApiURL)/\(userLoginName)"
+        request(userApiUrl).responseData { (response) in
             switch response.result {
-            case .success(let value):
-                if let json = value as? [String: AnyObject] {
-                    let user = GitUser(json: json)
+            case .success(let data):
+                let decoder = JSONDecoder()
+                if let user = try? decoder.decode(GitUser.self, from: data) {
                     completion(.success(user))
                 } else {
                     completion(.failure(Error.cannotParseJson))
@@ -147,15 +147,32 @@ public class APIHelper: NSObject {
                 completion(.failure(error))
             }
         }
+//        request(userApiUrl).responseJSON { (response) in
+//            switch response.result {
+//            case .success(let value):
+//                if let json = value as? [String: AnyObject] {
+//                    let user = GitUser(json: json)
+//                    completion(.success(user))
+//                } else {
+//                    completion(.failure(Error.cannotParseJson))
+//                }
+//            case .failure(let error):
+//                completion(.failure(error))
+//            }
+//        }
     }
 
+    /**
+
+     */
     public func getContributors(from repository: String, pageIndex: Int, numberOfRecordsPerPage: Int, completion: @escaping UsersArrayApiCompletion) {
-        let contributorUrl = "\(Constants.contributorsURL)"
+        let contributorUrl = "\(Constants.gitRepoQueryURL)/\(repository)/\(Constants.contributorsURLSegment)"
         let parameters: [String : Any] = ["page": pageIndex, "per_page": numberOfRecordsPerPage]
 
         request(contributorUrl, method: HTTPMethod.get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result {
             case .success(let value):
+                print("value: \(value)")
                 if let jsonArray = value as? [[String: AnyObject]] {
                     var contributors = [GitUser]()
                     for json in jsonArray {
